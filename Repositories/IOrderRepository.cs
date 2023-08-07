@@ -4,14 +4,14 @@ namespace TMS.Repositories
 {
     public interface IOrderRepository
     {
-        IEnumerable<Order> GetAll();
+        Task<IEnumerable<Order>> GetAll();
 
-        Order GetById(int id);
+        Task<Order> GetById(int id);
 
         int Add(Order order);
 
-        void Update(Order order);
+        Task Update(Order order);
 
-        int Delete(Order order);
+        Task Delete(int id);
     }
 }

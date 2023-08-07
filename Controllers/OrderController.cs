@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TMS.Models;
 using TMS.Models.DTOs;
-using TMS.Models.Mappers;
 using TMS.Repositories;
 
 namespace TMS.Controllers
@@ -16,37 +18,58 @@ namespace TMS.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly IOrderRepository orderRepository; 
+        private readonly IOrderRepository _orderRepository;
+        private readonly IMapper _mapper;
 
-        public OrderController(IOrderRepository orderRepository)
+        public OrderController(IOrderRepository orderRepository, IMapper mapper)
         {
-            this.orderRepository = orderRepository;
+            this._orderRepository = orderRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<OrderDTO>> GetOrders()
+        public async Task<ActionResult<IEnumerable<OrderResponseDTO>>> GetOrders()
         {
-            var orders = orderRepository.GetAll();
-            var ordersDTO = new List<OrderDTO>();
-            foreach(Order order in orders){
-                var orderDTO = OrderMapper.MapToDTO(order);
-                ordersDTO.Add(orderDTO);
-            }
+            var orders = await _orderRepository.GetAll();
+            var ordersResponseDTO = _mapper.Map<List<OrderResponseDTO>>(orders);
 
-            return Ok(ordersDTO);
+            return Ok(ordersResponseDTO);
         }
 
         [HttpGet]
-        public ActionResult<OrderDTO> GetOrderById(int id)
+        public async Task<ActionResult<OrderResponseDTO>> GetOrderById(int id)
         {
-            try
-            {
-                var order = orderRepository.GetById(id);
-                var orderDTO = OrderMapper.MapToDTO(order);
-                return Ok(orderDTO);
-            }
-            catch(Exception e) { return BadRequest(e.Message); }
+            var order = await _orderRepository.GetById(id);
+            var orderResponseDTO = _mapper.Map<OrderResponseDTO>(order);
+            return Ok(orderResponseDTO);
+            
         }
 
+        [HttpDelete]
+        public async Task<ActionResult<List<OrderResponseDTO>>> DeleteOrder(int id)
+        {
+            await Task.Delay(20000);
+            await _orderRepository.Delete(id);
+            var orders = await _orderRepository.GetAll();
+            var ordersResponseDTO = _mapper.Map<List<OrderResponseDTO>>(orders);
+            return Ok(ordersResponseDTO);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<OrderResponseDTO>> PatchOrder(OrderRequestPatchDTO orderRequestPacthDTO)
+        {
+            if(orderRequestPacthDTO == null) throw new ArgumentNullException(nameof(orderRequestPacthDTO));
+            var orderToBePatched = await _orderRepository.GetById(orderRequestPacthDTO.OrderId);
+
+            orderToBePatched.TicketcategoryId = orderRequestPacthDTO.TicketcategoryId;
+            orderToBePatched.NumberOfTickets = orderRequestPacthDTO.NumberOfTickets;
+            orderToBePatched.OrderedAt = DateTime.Now;
+            orderToBePatched.TotalPrice = orderToBePatched.Ticketcategory.Price * orderToBePatched.NumberOfTickets;
+            await _orderRepository.Update(orderToBePatched);
+
+            var orderResponseDTO = _mapper.Map<OrderResponseDTO>(orderToBePatched);
+
+            return Ok(orderResponseDTO);
+        }
     }
 }

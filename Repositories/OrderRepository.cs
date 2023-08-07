@@ -1,13 +1,15 @@
-﻿using TMS.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using TMS.Exceptions;
+using TMS.Models;
 
 namespace TMS.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        private readonly TicketMngDbContext ticketMngDbContext;
+        private readonly TicketMngDBContext _ticketMngDbContext;
         public OrderRepository()
         {
-            ticketMngDbContext = new TicketMngDbContext(); 
+            _ticketMngDbContext = new TicketMngDBContext(); 
         }
 
         public int Add(Order order)
@@ -15,29 +17,37 @@ namespace TMS.Repositories
             throw new NotImplementedException();
         }
 
-        public int Delete(Order order)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var existingOrder = await _ticketMngDbContext.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+            if (existingOrder == null)
+                throw new EntityNotFoundException(id, nameof(existingOrder));
+            _ticketMngDbContext.Orders.Remove(existingOrder);
+            await _ticketMngDbContext.SaveChangesAsync();
         }
 
-        public IEnumerable<Order> GetAll()
+        public async Task<IEnumerable<Order>> GetAll()
         {
-            var orders = ticketMngDbContext.Orders;
+            var orders = await _ticketMngDbContext.Orders.ToListAsync();
 
             return orders;
         }
 
-        public Order GetById(int id)
+        public async Task<Order> GetById(int id)
         {
-            var order = ticketMngDbContext.Orders.Where(o => o.OrderId == id).FirstOrDefault();
+            var order = await _ticketMngDbContext.Orders.Where(o => o.OrderId == id).FirstOrDefaultAsync();
             if (order == null)
-                throw new Exception("There is no order with the given id!");
+                throw new EntityNotFoundException(id, nameof(order));
             return order;
         }
 
-        public void Update(Order order)
+        public async Task Update(Order order)
         {
-            throw new NotImplementedException();
+            var existingOrder = await _ticketMngDbContext.Orders.Where(o => o.OrderId == order.OrderId).FirstOrDefaultAsync();
+            if (existingOrder == null)
+                throw new EntityNotFoundException("There is no order with the id of the given order in the database!");
+            _ticketMngDbContext.Entry(existingOrder).State = EntityState.Modified;
+            await _ticketMngDbContext.SaveChangesAsync();
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿namespace TMS.Models.DTOs
 {
-    public class OrderDTO
+    public class OrderResponseDTO
     {
         public int OrderId { get; set; }
 
-        public int? CustomerId { get; set; }
+        public int? EventId { get; set; }
 
         public int? TicketcategoryId { get; set; }
 

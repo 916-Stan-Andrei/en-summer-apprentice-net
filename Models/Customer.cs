@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TMS.Models;
-
-public partial class Customer
+namespace TMS.Models
 {
-    public int CustomerId { get; set; }
+    public partial class Customer
+    {
+        public Customer()
+        {
+            Orders = new HashSet<Order>();
+        }
 
-    public string? Email { get; set; }
+        public int CustomerId { get; set; }
+        public string? Email { get; set; }
+        public string? Name { get; set; }
 
-    public string? Name { get; set; }
-
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order> Orders { get; set; }
+    }
 }

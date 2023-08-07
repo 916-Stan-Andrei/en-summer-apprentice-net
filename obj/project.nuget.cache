@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "d1k8UQ8t5vAu5/PX7/Lori4gLqGx2BQ7CpjyP0TuA7GJ8xGVsTknd7Og01/59dFS/MLtHm7kjRdN70+4VH0Pvg==",
+  "dgSpecHash": "Sbqv7YcCrabGYn6MrBurUulvO1Ece1Ie5crzXhmgDonT5GAbr1abkQODST8qXKPKptJFQt3XSh1r9xl1oL0PBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\stanbydrew\\Desktop\\Practica\\en-summer-apprentice-net\\TMS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -71,7 +74,7 @@
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.0\\microsoft.codeanalysis.razor.6.0.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\4.0.0\\microsoft.codeanalysis.scripting.common.4.0.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.0.0\\microsoft.codeanalysis.workspaces.common.4.0.0.nupkg.sha512",
-    "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.diasymreader\\1.3.0\\microsoft.diasymreader.1.3.0.nupkg.sha512",
@@ -80,6 +83,7 @@
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.20\\microsoft.entityframeworkcore.abstractions.6.0.20.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.20\\microsoft.entityframeworkcore.analyzers.6.0.20.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.20\\microsoft.entityframeworkcore.design.6.0.20.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\6.0.20\\microsoft.entityframeworkcore.proxies.6.0.20.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.20\\microsoft.entityframeworkcore.relational.6.0.20.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.20\\microsoft.entityframeworkcore.sqlserver.6.0.20.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.20\\microsoft.entityframeworkcore.tools.6.0.20.nupkg.sha512",
@@ -150,6 +154,11 @@
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.composition\\1.0.31\\system.composition.1.0.31.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.composition.attributedmodel\\1.0.31\\system.composition.attributedmodel.1.0.31.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.composition.convention\\1.0.31\\system.composition.convention.1.0.31.nupkg.sha512",
@@ -161,8 +170,10 @@
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.diagnostics.tracesource\\4.3.0\\system.diagnostics.tracesource.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
@@ -224,7 +235,8 @@
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\stanbydrew\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\stanbydrew\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
